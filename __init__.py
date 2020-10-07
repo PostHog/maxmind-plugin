@@ -23,3 +23,5 @@ class MaxmindPlugin():
                 event.properties['$city_name'] = response.city.name
                 event.properties['$latitude'] = response.location.latitude
                 event.properties['$longitude'] = response.location.longitude
+
+        return event
