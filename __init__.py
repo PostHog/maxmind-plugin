@@ -1,5 +1,4 @@
-from abc import ABC, abstractmethod
-
+from posthog.plugins import PluginBaseClass, PosthogEvent
 import os
 import geoip2.database
 
@@ -13,22 +12,8 @@ else:
     reader = None
 
 
-class Plugin(ABC):
-    @abstractmethod
-    def process_event(self, event):
-        pass
-
-    @abstractmethod
-    def process_person(self, event):
-        pass
-
-    @abstractmethod
-    def process_identify(self, event):
-        pass
-
-
-class MaxmindPlugin(Plugin):
-    def process_event(self, event):
+class MaxmindPlugin(PluginBaseClass):
+    def process_event(self, event: PosthogEvent):
         if reader:
             ip = event.properties.get('$ip', None)
             if ip:
