@@ -14,10 +14,9 @@ else:
 
 class MaxmindPlugin(PluginBaseClass):
     def process_event(self, event: PosthogEvent):
-        if reader:
-            ip = event.properties.get('$ip', None)
-            if ip:
-                response = reader.city(ip)
+        if reader and event.ip:
+            try:
+                response = reader.city(event.ip)
                 event.properties['$country_iso'] = response.country.iso_code
                 event.properties['$country_name'] = response.country.name
                 event.properties['$region_iso'] = response.subdivisions.most_specific.iso_code
@@ -25,5 +24,8 @@ class MaxmindPlugin(PluginBaseClass):
                 event.properties['$city_name'] = response.city.name
                 event.properties['$latitude'] = response.location.latitude
                 event.properties['$longitude'] = response.location.longitude
+            except:
+                # ip not in the database
+                pass
 
         return event
