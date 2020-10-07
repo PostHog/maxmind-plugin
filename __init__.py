@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 import os
 import geoip2.database
 
@@ -10,7 +12,22 @@ else:
     print("🔺 No GeoIP data will be ingested!")
     reader = None
 
-class MaxmindPlugin():
+
+class Plugin(ABC):
+    @abstractmethod
+    def process_event(self, event):
+        pass
+
+    @abstractmethod
+    def process_person(self, event):
+        pass
+
+    @abstractmethod
+    def process_identify(self, event):
+        pass
+
+
+class MaxmindPlugin(Plugin):
     def process_event(self, event):
         if reader:
             ip = event.properties.get('$ip', None)
