@@ -1,22 +1,24 @@
 from posthog.plugins import PluginBaseClass, PosthogEvent
-import os
 import geoip2.database
-
-geoip_path = os.environ.get("MAXMIND_GEOIP_DATABASE", None)
-
-if geoip_path:
-    reader = geoip2.database.Reader(geoip_path)
-else:
-    print("🔻 Running posthog-maxmind-plugin without MAXMIND_GEOIP_DATABASE")
-    print("🔺 No GeoIP data will be ingested!")
-    reader = None
 
 
 class MaxmindPlugin(PluginBaseClass):
+    def __init__(self, config):
+        super().__init__(config)
+
+        geoip_path = self.config.get("geoip_path", None)
+
+        if geoip_path:
+            self.reader = geoip2.database.Reader(geoip_path)
+        else:
+            print("🔻 Running posthog-maxmind-plugin without the 'geoip_path' config variablle")
+            print("🔺 No GeoIP data will be ingested!")
+            self.reader = None
+
     def process_event(self, event: PosthogEvent):
-        if reader and event.ip:
+        if self.reader and event.ip:
             try:
-                response = reader.city(event.ip)
+                response = self.reader.city(event.ip)
                 event.properties['$country_iso'] = response.country.iso_code
                 event.properties['$country_name'] = response.country.name
                 event.properties['$region_iso'] = response.subdivisions.most_specific.iso_code
