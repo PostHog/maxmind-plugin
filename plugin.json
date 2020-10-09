@@ -6,7 +6,8 @@
     "geoip_path": {
       "name": "GeoIP database path",
       "type": "string",
-      "default": ""
+      "default": "",
+      "required": true
     }
   }
 }
