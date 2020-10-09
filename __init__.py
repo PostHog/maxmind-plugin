@@ -11,7 +11,7 @@ class MaxmindPlugin(PluginBaseClass):
         if geoip_path:
             self.reader = geoip2.database.Reader(geoip_path)
         else:
-            print("🔻 Running posthog-maxmind-plugin without the 'geoip_path' config variablle")
+            print("🔻 Running posthog-maxmind-plugin without the 'geoip_path' config variable")
             print("🔺 No GeoIP data will be ingested!")
             self.reader = None
 
