@@ -1,0 +1,12 @@
+{
+  "name": "posthog-maxmind-plugin",
+  "url": "https://github.com/posthog/posthog-maxmind-plugin",
+  "description": "Ingest GeoIP data via MaxMind",
+  "config": {
+    "geoip_path": {
+      "name": "GeoIP database path",
+      "type": "string",
+      "default": ""
+    }
+  }
+}
