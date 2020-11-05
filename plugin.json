@@ -1,13 +1,19 @@
 {
-  "name": "posthog-maxmind-plugin",
-  "url": "https://github.com/posthog/posthog-maxmind-plugin",
-  "description": "Ingest GeoIP data via MaxMind",
-  "config": {
-    "geoip_path": {
-      "name": "GeoIP database path",
-      "type": "string",
-      "default": "",
-      "required": true
+    "name": "posthog-maxmind-plugin",
+    "url": "https://github.com/posthog/posthog-maxmind-plugin",
+    "description": "Ingest GeoIP data via MaxMind",
+    "main": "dist/index.js",
+    "config": {
+        "maxmindMmdb": {
+            "name": "GeoIP .mddb database",
+            "type": "file",
+            "required": true
+        },
+        "stringKey": {
+            "name": "Random string key",
+            "type": "string",
+            "default": "",
+            "required": false
+        }
     }
-  }
 }
