@@ -9,8 +9,8 @@
             "type": "file",
             "required": true
         },
-        "stringKey": {
-            "name": "Random string key",
+        "localhostIP": {
+            "name": "IP to use instead of 127.0.0.1",
             "type": "string",
             "default": "",
             "required": false
