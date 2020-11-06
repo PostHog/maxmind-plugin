@@ -21,7 +21,7 @@
     "homepage": "https://github.com/PostHog/posthog-maxmind-plugin#readme",
     "devDependencies": {
         "mmdb-lib": "^1.2.0",
-        "posthog-plugins": "^0.1.0",
+        "posthog-plugins": "^0.1.1",
         "rimraf": "^3.0.0",
         "rollup": "^2.22.1",
         "rollup-plugin-commonjs": "^10.1.0",
