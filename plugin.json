@@ -6,7 +6,7 @@
     "config": {
         "maxmindMmdb": {
             "name": "GeoIP .mddb database",
-            "type": "file",
+            "type": "attachment",
             "required": true
         },
         "localhostIP": {
