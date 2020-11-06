@@ -27,7 +27,6 @@ export function processEvent(event: PluginEvent, { global, config }: Meta) {
         const response = global.ipLookup.get(event.ip) as CityResponse
         if (response) {
             if (response.city) {
-                event.properties['$city_id'] = response.city.geoname_id
                 event.properties['$city_name'] = response.city.names?.en
             }
             if (response.country) {
