@@ -8,15 +8,17 @@
             "markdown": "Sign up for a [MaxMind.com](https://www.maxmind.com) account, download and extract the database and then upload the `.mmdb` file below",
             "name": "GeoIP .mddb database",
             "type": "attachment",
-            "hint": "The \"GeoIP2 City\" or \"GeoLite2 City\" database from [MaxMind](https://www.maxmind.com)",
-            "required": true
+            "hint": "The \"GeoIP2 City\" or \"GeoLite2 City\" database file",
+            "required": true,
+            "order": 1
         },
         "localhostIP": {
             "name": "IP to use instead of 127.0.0.1",
             "type": "string",
             "hint": "Useful if testing locally",
             "default": "",
-            "required": false
+            "required": false,
+            "order": 2
         }
     }
 }
