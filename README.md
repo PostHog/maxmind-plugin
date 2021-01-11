@@ -10,3 +10,7 @@ Enrich your PostHog events with GeoIP data from MaxMind.
 1. Download the GeoLite2 City (or the paid GeoIP City) database
 1. Upload the `.mmdb` file in the archive via the plugin interface
 1. Enable the plugin and watch your events come in with the enriched data!
+
+## Questions?
+
+### [Join our Slack community.](https://join.slack.com/t/posthogusers/shared_invite/enQtOTY0MzU5NjAwMDY3LTc2MWQ0OTZlNjhkODk3ZDI3NDVjMDE1YjgxY2I4ZjI4MzJhZmVmNjJkN2NmMGJmMzc2N2U3Yjc3ZjI5NGFlZDQ)
