@@ -1,5 +1,5 @@
 import Reader, { CityResponse, Response } from 'mmdb-lib'
-import { PluginMeta, PluginEvent, PluginAttachment } from 'posthog-plugins'
+import { PluginMeta, PluginEvent, PluginAttachment } from '@posthog/plugin-scaffold'
 
 interface Meta extends PluginMeta {
     config: {
