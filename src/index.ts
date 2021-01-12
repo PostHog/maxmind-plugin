@@ -4,23 +4,23 @@ import { PluginMeta, PluginEvent, PluginAttachment } from 'posthog-plugins'
 interface Meta extends PluginMeta {
     config: {
         localhostIP: string
-    },
+    }
     attachments: {
         maxmindMmdb?: PluginAttachment
-    },
+    }
     global: {
         ipLookup?: Reader<Response>
     }
 }
 
-export function setupPlugin({ attachments, global }: Meta) {
+export async function setupPlugin({ attachments, global }: Meta) {
     if (attachments.maxmindMmdb) {
         global.ipLookup = new Reader(attachments.maxmindMmdb.contents)
     }
 }
 
 export function processEvent(event: PluginEvent, { global, config }: Meta) {
-    if (event.ip === "127.0.0.1" && config.localhostIP) {
+    if (event.ip === '127.0.0.1' && config.localhostIP) {
         event.ip = config.localhostIP
     }
     if (event.ip && event.properties && global.ipLookup) {

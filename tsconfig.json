@@ -11,7 +11,8 @@
         "baseUrl": "./src",
         "incremental": true,
         "resolveJsonModule": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "esModuleInterop": true
     },
     "exclude": ["node_modules", "dist"]
 }
