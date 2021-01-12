@@ -1,6 +1,6 @@
 {
     "name": "posthog-maxmind-plugin",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "description": "Ingest GeoIP data via MaxMind",
     "main": "dist/index.js",
     "scripts": {
