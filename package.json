@@ -1,7 +1,7 @@
 {
-    "name": "posthog-maxmind-plugin",
+    "name": "@posthog/maxmind-plugin",
     "version": "0.1.0",
-    "description": "Ingest GeoIP data via MaxMind",
+    "description": "Ingest GeoIP data via MaxMind databases",
     "main": "dist/index.js",
     "scripts": {
         "build": "yarn run clean && yarn run compile",
