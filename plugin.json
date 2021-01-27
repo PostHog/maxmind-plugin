@@ -1,7 +1,7 @@
 {
     "name": "MaxMind GeoIP",
     "url": "https://www.npmjs.com/package/posthog-maxmind-plugin",
-    "description": "Ingest GeoIP data via MaxMind",
+    "description": "Ingest GeoIP data via MaxMind databases",
     "main": "dist/index.js",
     "config": [
         {
