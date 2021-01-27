@@ -1,10 +1,11 @@
 {
-    "name": "posthog-maxmind-plugin",
-    "url": "https://github.com/posthog/posthog-maxmind-plugin",
+    "name": "MaxMind GeoIP",
+    "url": "https://www.npmjs.com/package/posthog-maxmind-plugin",
     "description": "Ingest GeoIP data via MaxMind",
     "main": "dist/index.js",
-    "config": {
-        "maxmindMmdb": {
+    "config": [
+        {
+            "key": "maxmindMmdb",
             "markdown": "Sign up for a [MaxMind.com](https://www.maxmind.com) account, download and extract the database and then upload the extracted `.mmdb` file below.\n\nYou can either download the large city databases (GeoIP2 City or GeoLite2 City) or the smaller country databases (e.g. GeoLite2 Country).\n\nSome PostHog installations might have problems loading the huge (70+MB) city databases, so unless you really need the additional data, we recommend installing the smaller (3MB) country database instead.",
             "name": "GeoIP .mddb database",
             "type": "attachment",
@@ -12,7 +13,8 @@
             "required": true,
             "order": 1
         },
-        "localhostIP": {
+        {
+            "key": "localhostIP",
             "name": "IP to use instead of 127.0.0.1",
             "type": "string",
             "hint": "Useful if testing locally",
@@ -20,5 +22,5 @@
             "required": false,
             "order": 2
         }
-    }
+    ]
 }
