@@ -10,6 +10,11 @@
         "prepublishOnly": "npm run build",
         "test": "jest"
     },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/PostHog/posthog-maxmind-plugin.git"
